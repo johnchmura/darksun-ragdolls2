@@ -1,54 +1,71 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = ({ currentSection, onSectionChange }) => {
+const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsActive(!isActive);
   };
 
-  const handleNavClick = (sectionId) => {
-    onSectionChange(sectionId);
-    setIsActive(false); // Close mobile menu when clicking a link
+  const closeMenu = () => {
+    setIsActive(false);
+  };
+
+  const isActiveRoute = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
   };
 
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}>
+        <Link to="/" onClick={closeMenu}>
           Darksun Ragdolls
-        </a>
+        </Link>
       </div>
       <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
         <span className="hamburger-icon">&#9776;</span>
       </div>
       <ul className={`navLinks ${isActive ? 'active' : ''}`}>
         <li>
-          <a 
-            href="#home" 
-            onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
-            className={currentSection === 'home' ? 'active' : ''}
+          <Link 
+            to="/" 
+            onClick={closeMenu}
+            className={isActiveRoute('/') ? 'active' : ''}
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="#cats" 
-            onClick={(e) => { e.preventDefault(); handleNavClick('cats'); }}
-            className={currentSection === 'cats' ? 'active' : ''}
+          <Link 
+            to="/kittens" 
+            onClick={closeMenu}
+            className={isActiveRoute('/kittens') ? 'active' : ''}
           >
-            Our Ragdolls
-          </a>
+            Available Kittens
+          </Link>
         </li>
         <li>
-          <a 
-            href="#contact" 
-            onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
-            className={currentSection === 'contact' ? 'active' : ''}
+          <Link 
+            to="/program" 
+            onClick={closeMenu}
+            className={isActiveRoute('/program') ? 'active' : ''}
           >
-            Contact
-          </a>
+            Our Program
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/about" 
+            onClick={closeMenu}
+            className={isActiveRoute('/about') ? 'active' : ''}
+          >
+            About & Contact
+          </Link>
         </li>
       </ul>
     </nav>

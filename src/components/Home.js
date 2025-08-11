@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = ({ onSectionChange }) => {
+const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const slideCurrentRef = useRef(null);
@@ -32,24 +33,24 @@ const Home = ({ onSectionChange }) => {
       }
       slideNextRef.current.style.transform = 'translateX(0)';
       
-              // After transition, update current image and reset positions
-        setTimeout(() => {
-          setCurrentIndex(nextIndex);
-          if (slideCurrentRef.current) {
-            slideCurrentRef.current.src = images[nextIndex];
-            slideCurrentRef.current.style.transition = 'none';
-            slideCurrentRef.current.style.transform = 'translateX(0)';
-          }
-          
-          if (slideNextRef.current) {
-            slideNextRef.current.style.transition = 'none';
-            slideNextRef.current.style.transform = 'translateX(100%)';
-          }
-          
-          setIsTransitioning(false);
-        }, 1000);
-      }
-    }, [currentIndex, isTransitioning, images]);
+      // After transition, update current image and reset positions
+      setTimeout(() => {
+        setCurrentIndex(nextIndex);
+        if (slideCurrentRef.current) {
+          slideCurrentRef.current.src = images[nextIndex];
+          slideCurrentRef.current.style.transition = 'none';
+          slideCurrentRef.current.style.transform = 'translateX(0)';
+        }
+        
+        if (slideNextRef.current) {
+          slideNextRef.current.style.transition = 'none';
+          slideNextRef.current.style.transform = 'translateX(100%)';
+        }
+        
+        setIsTransitioning(false);
+      }, 1000);
+    }
+  }, [currentIndex, isTransitioning, images]);
 
   const transitionToPrevImage = useCallback(() => {
     if (isTransitioning) return;
@@ -75,24 +76,24 @@ const Home = ({ onSectionChange }) => {
       }
       slideNextRef.current.style.transform = 'translateX(0)';
       
-              // After transition, update current image and reset positions
-        setTimeout(() => {
-          setCurrentIndex(prevIndex);
-          if (slideCurrentRef.current) {
-            slideCurrentRef.current.src = images[prevIndex];
-            slideCurrentRef.current.style.transition = 'none';
-            slideCurrentRef.current.style.transform = 'translateX(0)';
-          }
-          
-          if (slideNextRef.current) {
-            slideNextRef.current.style.transition = 'none';
-            slideNextRef.current.style.transform = 'translateX(-100%)';
-          }
-          
-          setIsTransitioning(false);
-        }, 1000);
-      }
-    }, [currentIndex, isTransitioning, images]);
+      // After transition, update current image and reset positions
+      setTimeout(() => {
+        setCurrentIndex(prevIndex);
+        if (slideCurrentRef.current) {
+          slideCurrentRef.current.src = images[prevIndex];
+          slideCurrentRef.current.style.transition = 'none';
+          slideCurrentRef.current.style.transform = 'translateX(0)';
+        }
+        
+        if (slideNextRef.current) {
+          slideNextRef.current.style.transition = 'none';
+          slideNextRef.current.style.transform = 'translateX(-100%)';
+        }
+        
+        setIsTransitioning(false);
+      }, 1000);
+    }
+  }, [currentIndex, isTransitioning, images]);
 
   useEffect(() => {
     // Auto-advance slides every 5 seconds
@@ -101,55 +102,141 @@ const Home = ({ onSectionChange }) => {
   }, [currentIndex, isTransitioning, transitionToNextImage]);
 
   return (
-    <section id="home" className="page">
-      <div className="home-content">
-        <div className="home-text">
-          <h1>Welcome to Darksun Ragdolls</h1>
-          <p>
-            At Darksun Ragdolls, we specialize in raising affectionate and well-socialized Ragdoll kittens. Our goal is to find loving homes for our kittens where they can bring joy, companionship, and a lifetime of purrs.
-          </p>
-          <div className="home-button-container">
-            <button 
-              className="home-button"
-              onClick={() => onSectionChange('cats')}
-            >
-              View Kittens
-            </button>
+    <>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Welcome to Darksun Ragdolls</h1>
+            <p>
+              At Darksun Ragdolls, we specialize in raising affectionate and well-socialized Ragdoll kittens. 
+              Our goal is to find loving homes for our kittens where they can bring joy, companionship, and a lifetime of purrs.
+            </p>
+            <div className="hero-buttons">
+              <Link to="/kittens" className="primary-button">
+                View Available Kittens
+              </Link>
+              <Link to="/program" className="secondary-button">
+                Learn About Our Program
+              </Link>
+            </div>
+          </div>
+          <div className="slideshow-container">
+            <img
+              ref={slideCurrentRef}
+              src={images[currentIndex]}
+              alt="Kitten slideshow"
+              className="slide"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                transition: 'transform 1s ease-in-out'
+              }}
+            />
+            <img
+              ref={slideNextRef}
+              src={images[(currentIndex + 1) % images.length]}
+              alt="Next kitten"
+              className="slide"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                transition: 'transform 1s ease-in-out',
+                transform: 'translateX(100%)'
+              }}
+            />
+            <div className="nav-area left" onClick={transitionToPrevImage}></div>
+            <div className="nav-area right" onClick={transitionToNextImage}></div>
           </div>
         </div>
-        <div className="slideshow-container">
-          <img
-            ref={slideCurrentRef}
-            src={images[currentIndex]}
-            alt="Kitten slideshow"
-            className="slide"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              transition: 'transform 1s ease-in-out'
-            }}
-          />
-          <img
-            ref={slideNextRef}
-            src={images[(currentIndex + 1) % images.length]}
-            alt="Next kitten"
-            className="slide"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              transition: 'transform 1s ease-in-out',
-              transform: 'translateX(100%)'
-            }}
-          />
-          <div className="nav-area left" onClick={transitionToPrevImage}></div>
-          <div className="nav-area right" onClick={transitionToNextImage}></div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="about-section">
+        <div className="container">
+          <h2>About Darksun Ragdolls</h2>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+                We are a small, family-owned cattery dedicated to breeding healthy, well-tempered Ragdoll cats. 
+                Our breeding program focuses on producing kittens with excellent health, temperament, and conformation 
+                to the Ragdoll breed standard.
+              </p>
+              <p>
+                Each kitten is raised in our home with love and attention, ensuring they are well-socialized 
+                and ready for their forever families. We take pride in our commitment to responsible breeding 
+                practices and the health of our cats.
+              </p>
+              <Link to="/about" className="learn-more-button">
+                Learn More About Us
+              </Link>
+            </div>
+            <div className="about-image">
+              <img src="images/cute_kitten.jpeg" alt="About Darksun Ragdolls" />
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Featured Kittens Section */}
+      <section className="featured-section">
+        <div className="container">
+          <h2>Featured Kittens</h2>
+          <p className="section-subtitle">Meet some of our adorable available kittens</p>
+          <div className="featured-kittens">
+            <div className="featured-kitten">
+              <img src="images/cute_kitten.jpeg" alt="Featured Kitten 1" />
+              <h3>Available Soon</h3>
+              <p>Beautiful Ragdoll kittens coming soon</p>
+              <Link to="/kittens" className="view-more-button">
+                View All Kittens
+              </Link>
+            </div>
+            <div className="featured-kitten">
+              <img src="images/multiple_kittens.jpeg" alt="Featured Kitten 2" />
+              <h3>New Litter</h3>
+              <p>Check back for new arrivals</p>
+              <Link to="/kittens" className="view-more-button">
+                View All Kittens
+              </Link>
+            </div>
+            <div className="featured-kitten">
+              <img src="images/furry_kitten.jpeg" alt="Featured Kitten 3" />
+              <h3>Coming Soon</h3>
+              <p>More adorable kittens on the way</p>
+              <Link to="/kittens" className="view-more-button">
+                View All Kittens
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Contact Section */}
+      <section className="quick-contact-section">
+        <div className="container">
+          <h2>Ready to Adopt?</h2>
+          <p>Get in touch with us to learn more about our available kittens and adoption process.</p>
+          <div className="quick-contact-info">
+            <div className="contact-item">
+              <img src="images/email.png" alt="Email" />
+              <a href="mailto:Darksunragdolls@gmail.com">Darksunragdolls@gmail.com</a>
+            </div>
+            <div className="contact-item">
+              <img src="images/phone.png" alt="Phone" />
+              <span>1 (502) 509-1468</span>
+            </div>
+          </div>
+          <Link to="/about" className="contact-button">
+            Contact Us
+          </Link>
+        </div>
+      </section>
+    </>
   );
 };
 
