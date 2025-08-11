@@ -79,7 +79,7 @@ const Cats = () => {
       {loading ? (
         <>
           <div className="spinner">
-            <div className="loader">Loading...</div>
+            <div className="loader"></div>
           </div>
           <p className="loader-text">Finding kittens!</p>
         </>

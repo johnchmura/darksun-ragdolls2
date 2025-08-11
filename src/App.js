@@ -30,20 +30,40 @@ function App() {
       }
     };
 
+    const handleScroll = () => {
+      updateBackgroundHeight();
+      
+      // Scroll spy - update current section based on scroll position
+      const sections = ['home', 'cats', 'contact'];
+      const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= navbarHeight + 100) { // 100px threshold
+            setCurrentSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
     updateBackgroundHeight();
-    window.addEventListener('resize', updateBackgroundHeight);
-    window.addEventListener('scroll', updateBackgroundHeight);
+    window.addEventListener('resize', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('resize', updateBackgroundHeight);
-      window.removeEventListener('scroll', updateBackgroundHeight);
+      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <div className="App">
       <BackgroundContainer />
-      <Navbar currentSection={currentSection} onSectionChange={setCurrentSection} />
+      <Navbar currentSection={currentSection} onSectionChange={scrollToSection} />
       <Home onSectionChange={scrollToSection} />
       <Cats />
       <Contact />
