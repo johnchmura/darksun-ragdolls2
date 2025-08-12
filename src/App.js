@@ -9,11 +9,13 @@ import AboutContact from './components/AboutContact';
 import PreviousKittens from './components/PreviousKittens';
 import Footer from './components/Footer';
 import BackgroundContainer from './components/BackgroundContainer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <BackgroundContainer />
         <Navbar />
         <Routes>
