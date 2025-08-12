@@ -231,7 +231,7 @@ const Home = () => {
               <span>1 (502) 509-1468</span>
             </div>
           </div>
-          <Link to="/about" className="contact-button">
+          <Link to="/contact" className="contact-button">
             Contact Us
           </Link>
         </div>

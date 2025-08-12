@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import CatModal from './CatModal';
 
 const Cats = () => {
+  const navigate = useNavigate();
   const [cats, setCats] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCat, setSelectedCat] = useState(null);
@@ -62,14 +64,8 @@ const Cats = () => {
 
   const scrollToContact = () => {
     closeModal();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
-      window.scrollTo({
-        top: contactSection.offsetTop - navbarHeight,
-        behavior: 'smooth',
-      });
-    }
+    // Navigate to contact page instead of scrolling
+    navigate('/contact');
   };
 
   return (
@@ -110,21 +106,9 @@ const Cats = () => {
               ))}
             </div>
           )}
-          <button 
-            className="contact-button"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
-                window.scrollTo({
-                  top: contactSection.offsetTop - navbarHeight,
-                  behavior: 'smooth'
-                });
-              }
-            }}
-          >
+          <Link to="/contact" className="contact-button">
             Contact Us
-          </button>
+          </Link>
         </>
       )}
 

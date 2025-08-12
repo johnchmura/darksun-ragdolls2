@@ -27,7 +27,7 @@ const PreviousKittens = () => {
           <h2>Interested in Our Future Litters?</h2>
           <p>While our current kittens have found their homes, we'd love to keep you updated on future litters.</p>
           <div className="cta-buttons">
-            <Link to="/about" className="primary-button">
+            <Link to="/contact" className="primary-button">
               Contact Us
             </Link>
             <Link to="/program" className="secondary-button">

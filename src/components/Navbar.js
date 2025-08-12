@@ -73,7 +73,16 @@ const Navbar = () => {
             onClick={closeMenu}
             className={isActiveRoute('/about') ? 'active' : ''}
           >
-            About & Contact
+            About
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="/contact" 
+            onClick={closeMenu}
+            className={isActiveRoute('/contact') ? 'active' : ''}
+          >
+            Contact
           </Link>
         </li>
       </ul>

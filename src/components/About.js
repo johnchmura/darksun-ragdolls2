@@ -1,13 +1,13 @@
 import React from 'react';
 
-const AboutContact = () => {
+const About = () => {
   return (
-    <div className="about-contact-page">
+    <div className="about-page">
       {/* Page Header */}
       <section className="page-header">
         <div className="container">
-          <h1>About & Contact</h1>
-          <p>Learn more about our family ragdoll business and get in touch with us</p>
+          <h1>About Us</h1>
+          <p>Learn more about our family ragdoll business and our mission</p>
         </div>
       </section>
 
@@ -206,100 +206,8 @@ const AboutContact = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Information Section */}
-      <section className="contact-info-section">
-        <div className="container">
-          <h2>Get In Touch</h2>
-          <div className="contact-content">
-            <div className="contact-info">
-              <h3>Contact Information</h3>
-              <div className="contact-details">
-                <div className="contact-item">
-                  <img src="images/email.png" alt="Email" />
-                  <div>
-                    <strong>Email:</strong>
-                    <a href="mailto:Darksunragdolls@gmail.com">Darksunragdolls@gmail.com</a>
-                  </div>
-                </div>
-                <div className="contact-item">
-                  <img src="images/phone.png" alt="Phone" />
-                  <div>
-                    <strong>Phone:</strong>
-                    <span>1 (502) 509-1468</span>
-                  </div>
-                </div>
-                <div className="contact-item">
-                  <div className="contact-icon">📍</div>
-                  <div>
-                    <strong>Location:</strong>
-                    <span>Louisville, Kentucky</span>
-                  </div>
-                </div>
-              </div>
-              <div className="contact-note">
-                <p>
-                  <strong>Note:</strong> We prefer email for initial inquiries as it allows 
-                  us to provide detailed responses and keep better records of your questions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <div className="faq-list">
-            <div className="faq-item">
-              <h3>When can I reserve a kitten?</h3>
-              <p>
-                We begin accepting reservations when kittens are 8 weeks old. A half payment 
-                ($750) is required to reserve your chosen kitten.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3>When do kittens go home?</h3>
-              <p>
-                All DarkSun Ragdolls can go home at 10 weeks old. This ensures they are properly 
-                weaned, vaccinated, and vet checked.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3>What's included with adoption?</h3>
-              <p>
-                Each kitten comes with first shots, vet check, TICA registration papers with 
-                all rights attached, and a health guarantee.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3>What is the price for Izzy and Tusk's kittens?</h3>
-              <p>
-                Izzy and Tusk's kittens are $1,500 with half required to reserve. The kittens 
-                paperwork will have all rights attached to their papers.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3>Can I visit your facility?</h3>
-              <p>
-                Yes! We welcome visitors by appointment. This ensures the safety and 
-                comfort of our cats while providing you with a personal family experience.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3>Are your cats registered?</h3>
-              <p>
-                Yes, both Izzy and Tusk are TICA certified, and all kittens will come with 
-                full registration papers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
 
-export default AboutContact;
+export default About;

@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AvailableKittens from './components/AvailableKittens';
 import BreedingProgram from './components/BreedingProgram';
-import AboutContact from './components/AboutContact';
+import About from './components/About';
+import Contact from './components/Contact';
 import PreviousKittens from './components/PreviousKittens';
 import Footer from './components/Footer';
 import BackgroundContainer from './components/BackgroundContainer';
@@ -22,7 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/kittens" element={<AvailableKittens />} />
           <Route path="/program" element={<BreedingProgram />} />
-          <Route path="/about" element={<AboutContact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/previous-kittens" element={<PreviousKittens />} />
         </Routes>
         <Footer />
