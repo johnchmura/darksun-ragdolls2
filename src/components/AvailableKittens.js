@@ -215,35 +215,6 @@ const AvailableKittens = () => {
         </div>
       </section>
 
-      {/* Application Process */}
-      <section className="application-section">
-        <div className="container">
-          <h2>Adoption Process</h2>
-          <div className="process-steps">
-            <div className="step">
-              <div className="step-number">1</div>
-              <h3>View Kittens</h3>
-              <p>Browse our available kittens and find your perfect match</p>
-            </div>
-            <div className="step">
-              <div className="step-number">2</div>
-              <h3>Contact Us</h3>
-              <p>Reach out to learn more about your chosen kitten</p>
-            </div>
-            <div className="step">
-              <div className="step-number">3</div>
-              <h3>Application</h3>
-              <p>Complete our adoption application form</p>
-            </div>
-            <div className="step">
-              <div className="step-number">4</div>
-              <h3>Welcome Home</h3>
-              <p>Pick up your new family member when ready</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="container">
@@ -251,11 +222,15 @@ const AvailableKittens = () => {
           <div className="faq-list">
             <div className="faq-item">
               <h3>When are kittens ready to go home?</h3>
-              <p>Kittens are typically ready to go home at 12-16 weeks of age, after they've received their vaccinations and are fully weaned.</p>
+              <p>All DarkSun Ragdolls can go home at 10 weeks old. We begin accepting reservations at 8 weeks.</p>
             </div>
             <div className="faq-item">
               <h3>What's included with adoption?</h3>
-              <p>Each kitten comes with health records, first vaccinations, microchip, and a health guarantee.</p>
+              <p>Each kitten comes with first shots, vet check, TICA registration papers with all rights attached, and a health guarantee.</p>
+            </div>
+            <div className="faq-item">
+              <h3>What is the price for Izzy and Tusk's kittens?</h3>
+              <p>Izzy and Tusk's kittens are $1,500 each, with half payment ($750) required to reserve and the remaining $750 due when the kitten goes home.</p>
             </div>
             <div className="faq-item">
               <h3>Do you ship kittens?</h3>

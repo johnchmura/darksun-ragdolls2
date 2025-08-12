@@ -2046,17 +2046,21 @@ footer .social-media a:hover {
   font-size: 0.9rem;
 }
 
-/* Contact Form Section */
-.contact-form-section {
+/* Contact Information Section */
+.contact-info-section {
   padding: 6rem 0;
   background: #ffffff;
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  justify-content: center;
   margin-top: 3rem;
+}
+
+.contact-info {
+  max-width: 600px;
+  text-align: center;
 }
 
 .contact-info h3 {
@@ -2074,6 +2078,7 @@ footer .social-media a:hover {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .contact-item img {
@@ -2107,67 +2112,13 @@ footer .social-media a:hover {
   padding: 1rem;
   border-radius: var(--border-radius);
   border-left: 4px solid var(--accent-color);
+  text-align: left;
 }
 
 .contact-note p {
   color: #666;
   font-size: 0.9rem;
   margin: 0;
-}
-
-/* Contact Form */
-.contact-form {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: var(--border-radius);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  transition: border-color var(--transition-speed) ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-.submit-button {
-  background: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  width: 100%;
-}
-
-.submit-button:hover {
-  background: var(--primary-color);
-  transform: translateY(-2px);
 }
 
 /* Responsive Design for New Pages */
@@ -2188,8 +2139,8 @@ footer .social-media a:hover {
   }
   
   .contact-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
   }
 }
 
@@ -2285,7 +2236,7 @@ footer .social-media a:hover {
   .team-section,
   .location-section,
   .testimonials-section,
-  .contact-form-section,
+  .contact-info-section,
   .faq-section {
     padding: 4rem 0;
   }
@@ -2306,8 +2257,15 @@ footer .social-media a:hover {
     align-items: center;
   }
   
-  .contact-form {
-    padding: 1.5rem;
+  .contact-info {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 }
 
@@ -2473,5 +2431,308 @@ footer .social-media a:hover {
   .upcoming-litter-section,
   .current-status-section {
     padding: 4rem 0;
+  }
+}
+
+/* Previous Kittens Page */
+.previous-kittens-page {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.success-stories-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.success-stories-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: var(--subheading-font-size);
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.story-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.story-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.story-content {
+  padding: 1.5rem;
+}
+
+.story-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.adoption-date {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.story-text {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.family-quote {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--accent-color);
+}
+
+.family-quote p {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.family-quote span {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.adoption-process-section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.adoption-process-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: var(--subheading-font-size);
+}
+
+.process-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.process-text {
+  flex: 1;
+}
+
+.process-text h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.process-text p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background: var(--accent-color);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.step-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.process-image {
+  flex: 1;
+  text-align: center;
+}
+
+.process-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Previous Kittens Page */
+@media (max-width: 768px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .step {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .success-stories-section,
+  .adoption-process-section {
+    padding: 4rem 0;
+  }
+  
+  .story-content {
+    padding: 1rem;
+  }
+  
+  .process-steps {
+    gap: 1rem;
+  }
+}
+
+/* Navigation Section (Home Page) */
+.navigation-section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.navigation-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: var(--subheading-font-size);
+}
+
+.navigation-section .section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: var(--body-font-size);
+}
+
+.navigation-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nav-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.nav-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.nav-card h3 {
+  color: var(--primary-color);
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+.nav-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  flex-grow: 1;
+}
+
+.nav-button {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  align-self: flex-start;
+}
+
+.nav-button:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design for Navigation Section */
+@media (max-width: 768px) {
+  .navigation-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation-section {
+    padding: 4rem 0;
+  }
+  
+  .nav-card h3,
+  .nav-card p,
+  .nav-button {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

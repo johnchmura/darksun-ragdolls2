@@ -54,7 +54,7 @@ const BreedingProgram = () => {
                 <div className="parent-details">
                   <p><strong>Color:</strong> Blue Point</p>
                   <p><strong>Age:</strong> 3 years</p>
-                  <p><strong>Health:</strong> HCM negative, PKD negative</p>
+                  <p><strong>Registration:</strong> TICA Certified</p>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ const BreedingProgram = () => {
                 <div className="parent-details">
                   <p><strong>Color:</strong> Seal Point</p>
                   <p><strong>Age:</strong> 4 years</p>
-                  <p><strong>Health:</strong> HCM negative, PKD negative</p>
+                  <p><strong>Registration:</strong> TICA Certified</p>
                 </div>
               </div>
             </div>
@@ -80,53 +80,24 @@ const BreedingProgram = () => {
         </div>
       </section>
 
-      {/* Health & Genetics */}
+      {/* Health & Care */}
       <section className="health-section">
         <div className="container">
-          <h2>Health & Genetics</h2>
+          <h2>Health & Care</h2>
           <div className="health-content">
             <div className="health-text">
-              <h3>Health Testing</h3>
               <p>
-                All our breeding cats undergo comprehensive health testing to ensure we're 
-                producing the healthiest kittens possible. We test for common genetic conditions 
-                that can affect Ragdolls.
+                All DarkSun Ragdolls go home with their first shots and have been vet checked, 
+                ensuring they are healthy and ready for their new families.
               </p>
-              <ul className="health-list">
-                <li>HCM (Hypertrophic Cardiomyopathy) testing</li>
-                <li>PKD (Polycystic Kidney Disease) testing</li>
-                <li>Regular veterinary check-ups</li>
-                <li>Vaccination protocols</li>
-                <li>Parasite prevention</li>
-              </ul>
+              <p>
+                We prioritize the well-being of every kitten, providing comprehensive care from 
+                birth through adoption. Our commitment to health means you can trust that your 
+                new family member is in excellent condition when they come home.
+              </p>
             </div>
             <div className="health-image">
-              <img src="images/cute_kitten.jpeg" alt="Health & Genetics" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Facility Tour */}
-      <section className="facility-section">
-        <div className="container">
-          <h2>Our Facility</h2>
-          <p className="section-subtitle">A clean, safe environment for our cats and kittens</p>
-          <div className="facility-grid">
-            <div className="facility-item">
-              <img src="images/cute_kitten.jpeg" alt="Nursery Area" />
-              <h3>Nursery Area</h3>
-              <p>Dedicated space for mothers and newborn kittens</p>
-            </div>
-            <div className="facility-item">
-              <img src="images/multiple_kittens.jpeg" alt="Play Area" />
-              <h3>Play Area</h3>
-              <p>Large space for kittens to socialize and play</p>
-            </div>
-            <div className="facility-item">
-              <img src="images/furry_kitten.jpeg" alt="Adult Quarters" />
-              <h3>Adult Quarters</h3>
-              <p>Comfortable living space for our breeding cats</p>
+              <img src="images/cute_kitten.jpeg" alt="Health & Care" />
             </div>
           </div>
         </div>
@@ -139,8 +110,8 @@ const BreedingProgram = () => {
           <div className="certifications-grid">
             <div className="certification">
               <div className="cert-icon">🏆</div>
-              <h3>CFA Registered</h3>
-              <p>Cat Fanciers' Association registered cattery</p>
+              <h3>TICA Certified</h3>
+              <p>The International Cat Association certified cattery</p>
             </div>
             <div className="certification">
               <div className="cert-icon">❤️</div>

@@ -182,34 +182,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Kittens Section */}
-      <section className="featured-section">
+      {/* Navigation Section */}
+      <section className="navigation-section">
         <div className="container">
-          <h2>Featured Kittens</h2>
-          <p className="section-subtitle">Meet some of our adorable available kittens</p>
-          <div className="featured-kittens">
-            <div className="featured-kitten">
-              <img src="images/cute_kitten.jpeg" alt="Featured Kitten 1" />
-              <h3>Available Soon</h3>
-              <p>Beautiful Ragdoll kittens coming soon</p>
-              <Link to="/kittens" className="view-more-button">
-                View All Kittens
+          <h2>Explore Our Ragdoll Family</h2>
+          <p className="section-subtitle">Discover everything we have to offer</p>
+          <div className="navigation-cards">
+            <div className="nav-card">
+              <img src="images/multiple_kittens.jpeg" alt="Available Kittens" />
+              <h3>Available Kittens</h3>
+              <p>Browse our current litter of adorable Ragdoll kittens available for adoption.</p>
+              <Link to="/kittens" className="nav-button">
+                View Available Kittens
               </Link>
             </div>
-            <div className="featured-kitten">
-              <img src="images/multiple_kittens.jpeg" alt="Featured Kitten 2" />
-              <h3>New Litter</h3>
-              <p>Check back for new arrivals</p>
-              <Link to="/kittens" className="view-more-button">
-                View All Kittens
+            <div className="nav-card">
+              <img src="images/cute_kitten.jpeg" alt="Previous Adoptions" />
+              <h3>Previous Adoptions</h3>
+              <p>See the success stories of kittens who have found their forever homes.</p>
+              <Link to="/previous-kittens" className="nav-button">
+                View Success Stories
               </Link>
             </div>
-            <div className="featured-kitten">
-              <img src="images/furry_kitten.jpeg" alt="Featured Kitten 3" />
-              <h3>Coming Soon</h3>
-              <p>More adorable kittens on the way</p>
-              <Link to="/kittens" className="view-more-button">
-                View All Kittens
+            <div className="nav-card">
+              <img src="images/furry_kitten.jpeg" alt="Our Breeding Program" />
+              <h3>Our Breeding Program</h3>
+              <p>Learn about our TICA registered parents and breeding standards.</p>
+              <Link to="/program" className="nav-button">
+                Explore Our Program
               </Link>
             </div>
           </div>

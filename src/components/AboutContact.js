@@ -1,37 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const AboutContact = () => {
-  const [contactForm, setContactForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setContactForm(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Contact form submitted:', contactForm);
-    // For now, just show an alert
-    alert('Thank you for your message! We will get back to you soon.');
-    setContactForm({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-  };
-
   return (
     <div className="about-contact-page">
       {/* Page Header */}
@@ -238,8 +207,8 @@ const AboutContact = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="contact-form-section">
+      {/* Contact Information Section */}
+      <section className="contact-info-section">
         <div className="container">
           <h2>Get In Touch</h2>
           <div className="contact-content">
@@ -275,81 +244,6 @@ const AboutContact = () => {
                 </p>
               </div>
             </div>
-            
-            <div className="contact-form">
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={contactForm.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={contactForm.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="phone">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={contactForm.phone}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="subject">Subject *</label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={contactForm.subject}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="spring-2025-litter">Spring 2025 Litter Interest</option>
-                    <option value="kitten-inquiry">General Kitten Inquiry</option>
-                    <option value="adoption-process">Adoption Process</option>
-                    <option value="breeding-program">Breeding Program</option>
-                    <option value="general-question">General Question</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    value={contactForm.message}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Please tell us about your inquiry..."
-                  ></textarea>
-                </div>
-                
-                <button type="submit" className="submit-button">
-                  Send Message
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </section>
@@ -369,7 +263,7 @@ const AboutContact = () => {
             <div className="faq-item">
               <h3>When do kittens go home?</h3>
               <p>
-                All DarkSun Ragdolls go home at 10 weeks old. This ensures they are properly 
+                All DarkSun Ragdolls can go home at 10 weeks old. This ensures they are properly 
                 weaned, vaccinated, and vet checked.
               </p>
             </div>
@@ -383,8 +277,8 @@ const AboutContact = () => {
             <div className="faq-item">
               <h3>What is the price for Izzy and Tusk's kittens?</h3>
               <p>
-                Izzy and Tusk's Spring 2025 litter kittens are $1,500 each, with $750 required 
-                to reserve and the remaining $750 due when the kitten goes home.
+                Izzy and Tusk's kittens are $1,500 with half required to reserve. The kittens 
+                paperwork will have all rights attached to their papers.
               </p>
             </div>
             <div className="faq-item">
@@ -397,7 +291,7 @@ const AboutContact = () => {
             <div className="faq-item">
               <h3>Are your cats registered?</h3>
               <p>
-                Yes, both Izzy and Tusk are TICA registered, and all kittens will come with 
+                Yes, both Izzy and Tusk are TICA certified, and all kittens will come with 
                 full registration papers.
               </p>
             </div>

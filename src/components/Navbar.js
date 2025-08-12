@@ -51,6 +51,15 @@ const Navbar = () => {
         </li>
         <li>
           <Link 
+            to="/previous-kittens" 
+            onClick={closeMenu}
+            className={isActiveRoute('/previous-kittens') ? 'active' : ''}
+          >
+            Previous Kittens
+          </Link>
+        </li>
+        <li>
+          <Link 
             to="/program" 
             onClick={closeMenu}
             className={isActiveRoute('/program') ? 'active' : ''}
